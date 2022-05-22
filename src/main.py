@@ -19,7 +19,7 @@ def displayBoard():
 def askForMove(player):
   while True:
     print("Please enter move, player " + player + "")
-    move = input("> ")
+    move = input("> ").capitalize()
 
     if move in LEGAL_MOVES:
 
@@ -98,6 +98,7 @@ def askForMove(player):
 # Main Loop:
 def main():
   turn = O
+  print("Welcome to TIC-TAC-TOE")
   while True:
     if turn == X:
       turn = O
@@ -108,29 +109,75 @@ def main():
     askForMove(turn)
 
     if BOARD_TOP[0] == turn and BOARD_TOP[1] == turn and BOARD_TOP[2] == turn:
-      print("\n\nPlayer " + turn + " has won!!")
+      victory()
       break
     if BOARD_MIDDLE[0] == turn and BOARD_MIDDLE[1] == turn and BOARD_MIDDLE[2] == turn:
-      print("\n\nPlayer " + turn + " has won!!")
+      victory()
       break
     if BOARD_BOTTOM[0] == turn and BOARD_BOTTOM[1] == turn and BOARD_BOTTOM[2] == turn:
-      print("\n\nPlayer " + turn + " has won!!")
+      victory()
       break
     if BOARD_TOP[0] == turn and BOARD_MIDDLE[1] == turn and BOARD_BOTTOM[2] == turn:
-      print("\n\nPlayer " + turn + " has won!!")
+      victory()
       break
     if BOARD_TOP[2] == turn and BOARD_MIDDLE[1] == turn and BOARD_BOTTOM[0] == turn:
-      print("\n\nPlayer " + turn + " has won!!")
+      victory()
       break
     if BOARD_TOP[0] == turn and BOARD_MIDDLE[0] == turn and BOARD_BOTTOM[0] == turn:
-      print("\n\nPlayer " + turn + " has won!!")
+      victory()
       break
     if BOARD_TOP[1] == turn and BOARD_MIDDLE[1] == turn and BOARD_BOTTOM[1] == turn:
-      print("\n\nPlayer " + turn + " has won!!")
+      victory()
       break
     if BOARD_TOP[2] == turn and BOARD_MIDDLE[2] == turn and BOARD_BOTTOM[2] == turn:
-      print("\n\nPlayer " + turn + " has won!!")
+      victory()
       break
+
+    if BOARD_TOP[0] != "." and BOARD_TOP[1] != "." and BOARD_TOP[2] != "." and BOARD_MIDDLE[0] != "." and BOARD_MIDDLE[1] != "." and BOARD_MIDDLE[2] != "." and BOARD_BOTTOM[0] != "." and BOARD_BOTTOM[1] != "." and BOARD_BOTTOM[2] != ".":
+      displayBoard()
+      print("\n\nCAT got it! Play Again?")
+      print("""       _                        
+       \`*-.                    
+        )  _`-.                 
+       .  : `. .                
+       : _   '  \               
+       ; *` _.   `*-._          
+       `-.-'          `-
+       .       
+         ;       `       `.     
+         :.       .        \    
+         . \  .   :   .-'   .   
+         '  `+.;  ;  '      :   
+         :  '  |    ;       ;-. 
+         ; '   : :`-:     _.`* ;
+      .*' /  .*' ; .*`- +'  `*' 
+      `*-*   `*-*  `*-*'
+      """)
+      playAgain = input("Play Again? (y) (n)\n> ").capitalize()
+      if playAgain == "Y":
+        main()
+      else: 
+        break
+
+def victory():
+  displayBoard()
+  print("\n\nVictory!! Great Job!")
+  print("""                                   .''.       
+       .''.      .        *''*    :_\/_:     . 
+      :_\/_:   _\(/_  .:.*_\/_*   : /\ :  .'.:.'.
+  .''.: /\ :   ./)\   ':'* /\ * :  '..'.  -=:o:=-
+ :_\/_:'.:::.    ' *''*    * '.\'/.' _\(/_'.':'.'
+ : /\ : :::::     *_\/_*     -= o =-  /)\    '  *
+  '..'  ':::'     * /\ *     .'/.\'.   '
+      *            *..*         :
+        *
+        *""")
+  playAgain = input("Play Again? (y) (n)\n> ").capitalize()
+  if playAgain == "Y":
+    main()
+  else:
+    pass
+
 
 if __name__ == '__main__':
   main()
