@@ -8,6 +8,19 @@ BOARD_TOP    = [ "{}".format(SPACE), "{}".format(SPACE), "{}".format(SPACE) ]
 BOARD_MIDDLE = [ "{}".format(SPACE), "{}".format(SPACE), "{}".format(SPACE) ]
 BOARD_BOTTOM = [ "{}".format(SPACE), "{}".format(SPACE), "{}".format(SPACE) ]
 
+
+def reset():
+  BOARD_TOP[0] = "{}".format(SPACE)
+  BOARD_TOP[1] = "{}".format(SPACE)
+  BOARD_TOP[2] = "{}".format(SPACE)
+  BOARD_MIDDLE[0] = "{}".format(SPACE)
+  BOARD_MIDDLE[1] = "{}".format(SPACE)
+  BOARD_MIDDLE[2] = "{}".format(SPACE)
+  BOARD_BOTTOM[0] = "{}".format(SPACE)
+  BOARD_BOTTOM[1] = "{}".format(SPACE)
+  BOARD_BOTTOM[2] = "{}".format(SPACE)
+
+
 def displayBoard():
   print("\n")
   print("  ABC")
@@ -174,6 +187,7 @@ def victory():
         *""")
   playAgain = input("Play Again? (y) (n)\n> ").capitalize()
   if playAgain == "Y":
+    reset()
     main()
   else:
     pass
