@@ -5,6 +5,10 @@ just run:
 ```bash
 python3 ./YOUR/PATH/TO/main.py
 ```
+or:
+```bash
+python ./YOUR/PATH/TO/main.py
+```
 
 ### Enjoy!
 @WhaleWellWell

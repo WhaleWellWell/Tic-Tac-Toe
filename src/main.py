@@ -1,6 +1,8 @@
-# TIC-TAC-TOE by @WhaleWellWell on GitHub
+'''
+TIC-TAC-TOE by @WhaleWellWell on GitHub
+'''
 
-X = "x"
+X = "X"
 O = "O"
 LEGAL_MOVES = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"]
 SPACE = "."
@@ -10,9 +12,9 @@ BOARD_BOTTOM = [ "{}".format(SPACE), "{}".format(SPACE), "{}".format(SPACE) ]
 
 
 def reset():
-  BOARD_TOP[0] = "{}".format(SPACE)
-  BOARD_TOP[1] = "{}".format(SPACE)
-  BOARD_TOP[2] = "{}".format(SPACE)
+  BOARD_TOP[0]    = "{}".format(SPACE)
+  BOARD_TOP[1]    = "{}".format(SPACE)
+  BOARD_TOP[2]    = "{}".format(SPACE)
   BOARD_MIDDLE[0] = "{}".format(SPACE)
   BOARD_MIDDLE[1] = "{}".format(SPACE)
   BOARD_MIDDLE[2] = "{}".format(SPACE)
